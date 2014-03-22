@@ -1,0 +1,110 @@
+body {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#inputbox div {
+    position: relative;
+    text-align: right;
+    padding: 20px;
+}
+
+#inputbox div.active:before {
+    content: ' ';
+    
+    position: absolute;
+    top: 9px;
+    left:0;
+    
+    display: block;
+    width: 50px;
+    height: 50px;
+    
+    background-image: url(../img/pencil.jpg);
+    background-position: 20px;
+    background-repeat: no-repeat;
+    -webkit-animation: blink 1s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: blink 1s;
+    -moz-animation-iteration-count: infinite;
+    -o-animation: blink 1s;
+    -o-animation-iteration-count: infinite;  
+    -webkit-transition: opacity 0.5s ease;
+}
+
+#inputbox span {
+    font-size: 2em;
+}
+
+#inputbox small {
+    margin-left: 5px;
+}
+
+
+#keyboard {
+    background: #c2c2c2;
+}
+
+
+table td {
+    padding: 25px;
+    text-align: center;
+}
+
+.activenumber {
+    background: gray;
+
+}
+
+
+
+
+
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-o-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/*
+img {
+    -webkit-animation: blink 1s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: blink 1s;
+    -moz-animation-iteration-count: infinite;
+    -o-animation: blink 1s;
+    -o-animation-iteration-count: infinite;
+}
+*/
+
+
