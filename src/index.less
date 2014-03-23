@@ -9,8 +9,6 @@
  * each feature.
  */
 
-/*FEATURES*/
-
 
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans:100);
 @import "assets/less/reset.less";
@@ -23,13 +21,23 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+
+
+
+
+
+/**
+ * INPUTBOX
+ * ================
+ */
+
 #inputbox div {
     position: relative;
     text-align: right;
     padding: 20px;
 }
 
-#inputbox div.active:before {
+#inputbox .active:before {
     content: ' ';
     
     position: absolute;
@@ -61,26 +69,11 @@ body {
 }
 
 
-#keyboard {
-    background: #c2c2c2;
-}
 
 
-table td {
-    padding: 25px;
-    text-align: center;
-}
-
-.activenumber {
-    background: gray;
-
-}
-
-
-
-
-
-
+/**
+ * Blinking animation
+ */
 @-webkit-keyframes blink {
     0% {
         opacity: 1;
@@ -117,3 +110,28 @@ table td {
 
 
 
+
+
+/**
+ * KEYPAD
+ */
+
+#keypad {
+    background: #c2c2c2;
+}
+
+
+table td {
+    padding: 25px;
+    text-align: center;
+}
+
+#keypad .active {
+    background: gray;
+
+}
+
+
+
+
+/*FEATURES*/

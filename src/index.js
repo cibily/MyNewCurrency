@@ -8,15 +8,6 @@
 var features = [/*FEATURES*/];
 
 /**
- * Features Init
- */
-features.forEach(function(feature) {
-    if (feature.init) {
-        feature.init();
-    }
-});
-
-/**
  * Features Start
  */
 features.forEach(function(feature) {

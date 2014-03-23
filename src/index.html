@@ -17,45 +17,49 @@
     <body>
         
         <div id="inputbox">
-            <div class="active" style="border-bottom: 2px dashed #c2c2c2">
-                <span>0,00</span>
-                <small>EUR</small> 
+            <div style="border-bottom: 2px dashed #c2c2c2">
+                <span data-bind="text:v1">0,00</span>
+                <small>SEK</small> 
             </div>
             <div>
-                <span class="">0,00</span>
-                <small class="">SEK</small>
+                <span data-bind="text:v2">0,00</span>
+                <small>EUR</small>
             </div>
         </div>
-        <div id="keyboard">
+        
+        <div id="keypad">
             <table width="100%" border="1px">
                 <tr>
-                    <td width="25%">7</td>
-                    <td width="25%">8</td>
-                    <td width="25%">9</td>
-                    <td width="25%" style="background:green">C</td>  
+                    <td width="25%" data-bind="keypad">7</td>
+                    <td width="25%" data-bind="keypad">8</td>
+                    <td width="25%" data-bind="keypad">9</td>
+                    <td width="25%" data-bind="keypad" style="background:green">C</td>  
                 </tr>
                  <tr>
-                    <td width="25%">4</td>
-                    <td class="activenumber" width="25%">5</td>
-                    <td width="25%">6</td>
-                    <td width="25%" rowspan="3" style="background:green">=</td>  
+                    <td width="25%" data-bind="keypad">4</td>
+                    <td width="25%" data-bind="keypad">5</td>
+                    <td width="25%" data-bind="keypad">6</td>
+                    <td width="25%" data-bind="keypad" rowspan="3" style="background:green">=</td>  
                 </tr>
                  <tr>
-                    <td width="25%">1</td>
-                    <td width="25%">2</td>
-                    <td width="25%">3</td>
+                    <td width="25%" data-bind="keypad">1</td>
+                    <td width="25%" data-bind="keypad">2</td>
+                    <td width="25%" data-bind="keypad">3</td>
                 </tr>
                  <tr>
-                    <td width="25%" style="background:gray">
-                        <span>i</span>
-                    </td>
-                    <td width="25%">0</td>
-                    <td width="25%">,</td>
+                    <td width="25%" data-bind="keypad"><span>i</span></td>
+                    <td width="25%" data-bind="keypad">0</td>
+                    <td width="25%" data-bind="keypad">,</td>
                 </tr>
             </table>
-        </div>        
+        </div> 
         
-    
+        
+        
+        <!--[JS]-->
+        <script src="./assets/js/jquery-2.1.0.js"></script>
+        <script src="./assets/js/knockout-3.1.0.js"></script>
+        <!--[/JS]-->
        
     </body>
 

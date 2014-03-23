@@ -1,0 +1,25 @@
+{
+  "name": "message-bus",
+  "version": "0.1.0",
+  "description": "Component Emitter Singleton",
+  "main": "index.js",
+  "keywords": [
+    "component",
+    "emitter",
+    "singleton",
+    "message",
+    "bus"
+  ],
+  "author": {
+    "name": "Marco Pegoraro",
+    "url": "http://movableapp.com"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "component-emitter": "~1.1.2"
+  }
+}
