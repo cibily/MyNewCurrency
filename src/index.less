@@ -10,7 +10,7 @@
  */
 
 
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:100);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:300);
 @import "assets/less/reset.less";
 
 
@@ -51,13 +51,14 @@ body {
     background-image: url(assets://img/pencil.jpg);
     background-position: 20px;
     background-repeat: no-repeat;
-    -webkit-animation: blink 1s;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation: blink 1s;
-    -moz-animation-iteration-count: infinite;
-    -o-animation: blink 1s;
-    -o-animation-iteration-count: infinite;  
-    -webkit-transition: opacity 0.5s ease;
+    
+//    -webkit-animation: blink 1s;
+//    -webkit-animation-iteration-count: infinite;
+//    -moz-animation: blink 1s;
+//    -moz-animation-iteration-count: infinite;
+//    -o-animation: blink 1s;
+//    -o-animation-iteration-count: infinite;  
+//    -webkit-transition: opacity 0.5s ease;
 }
 
 #inputbox span {
@@ -121,14 +122,18 @@ body {
 }
 
 
-table td {
-    padding: 25px;
+#keypad td {
+    padding: 22px 25px;
     text-align: center;
+    color: #333;
+    text-shadow: 0 1px #fff;
+    font-size: 1.5em;
 }
 
-#keypad .active {
+#keypad td.active {
     background: gray;
-
+    color: #fff;
+    text-shadow: 0 1px #333;
 }
 
 

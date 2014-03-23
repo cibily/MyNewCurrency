@@ -5,6 +5,7 @@
 		<title>MyNewCurrency</title>
 		
 		<!-- Mobile -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <!-- // Mobile -->
 
@@ -17,11 +18,11 @@
     <body>
         
         <div id="inputbox">
-            <div style="border-bottom: 2px dashed #c2c2c2">
+            <div data-bind="css: { active: dir() === 'down'}, event: { touchstart: setDirDown}" style="border-bottom: 2px dashed #c2c2c2">
                 <span data-bind="text:v1">0,00</span>
                 <small>SEK</small> 
             </div>
-            <div>
+            <div data-bind="css: { active: dir() === 'up'}, event: { touchstart: setDirUp}">
                 <span data-bind="text:v2">0,00</span>
                 <small>EUR</small>
             </div>

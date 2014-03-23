@@ -12,8 +12,10 @@ module.exports.key.extend({ notify: 'always' });
 
 
 
+/**
+ * Listen to the key value to queque a number and spread it to the world.
+ */
 var inputStr = '';
-
 module.exports.key.subscribe(function(val) {
     console.log('vm keypress', val);
     switch (val) {
