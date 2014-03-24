@@ -176,15 +176,27 @@ module.exports = function (grunt) {
 //                        'Firefox', 
 //                        'Opera'
                     ],
-                    files: []
+                    reporters: [
+                        'progress',
+                        'coverage',
+                        'osx'
+                    ],
+                    preprocessors: {}, // filled dinamically
+                    coverageReporter: {
+                        type: 'html',
+                        dir: 'build/coverage/'
+                    }
                 }
             },
             ci: {
                 configFile: 'karma.conf.js',
                 options: {
-                    browsers: ['PhantomJS'],
                     singleRun: false,
-                    files: []
+                    browsers: ['PhantomJS'],
+                    reporters: [
+                        'progress',
+                        'osx'
+                    ]
                 }
             }
         },
@@ -192,11 +204,17 @@ module.exports = function (grunt) {
         watch: {
             build: {
                 files: ['Gruntfile.js', 'src/**/*'],
-                tasks: ['build']
+                tasks: ['build'],
+                options: {
+                    spawn: false
+                }
             },
             ci: {
                 files: ['build/debug/**/*'],
-                tasks: ['debug-karma-scripts', 'karma:ci:run']
+                tasks: ['debug-karma-scripts', 'karma:ci:run'],
+                options: {
+                    spawn: false
+                }
             }
         }
 		
@@ -491,6 +509,11 @@ module.exports = function (grunt) {
                 paths.push(href.replace('./', 'build/debug/'));
             }
 		});
+        
+        // add code coverage preprocesso in test
+        paths.forEach(function(path) {
+            grunt.config.data.karma.test.options.preprocessors[path] = ['coverage'];
+        });
         
         paths.push('src/features/**/specs/**/*.spec.js');
         paths.push('src/modules/**/specs/**/*.spec.js');
