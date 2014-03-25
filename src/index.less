@@ -37,6 +37,10 @@ body {
     padding: 20px;
 }
 
+#inputbox .active {
+    border-bottom: 2px dashed #c2c2c2;
+}
+
 #inputbox .active:before {
     content: ' ';
     
@@ -48,9 +52,10 @@ body {
     width: 50px;
     height: 50px;
     
-    background-image: url(assets://img/pencil.jpg);
-    background-position: 20px;
+    background-image: url(assets://img/arrow1.jpg);
+    background-position: 15px;
     background-repeat: no-repeat;
+
     
 //    -webkit-animation: blink 1s;
 //    -webkit-animation-iteration-count: infinite;
@@ -125,15 +130,22 @@ body {
 #keypad td {
     padding: 22px 25px;
     text-align: center;
-    color: #333;
-    text-shadow: 0 1px #fff;
-    font-size: 1.5em;
+    color: #020001;
+    text-shadow: 0 1px #ccc;
+    font-size: 1.6em;
 }
 
 #keypad td.active {
-    background: gray;
+    background: #c6c6c6;
     color: #fff;
     text-shadow: 0 1px #333;
+}
+    
+#keypad td:nth-child(4n) {
+    background: #1b7a2a;
+    color: #fff;
+    text-shadow: 0 1px #333;
+    
 }
 
 
