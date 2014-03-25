@@ -18,7 +18,7 @@
     <body>
         
         <div id="inputbox">
-            <div data-bind="css: { active: dir() === 'down'}, event: { touchstart: setDirDown}" style="border-bottom: 2px dashed #c2c2c2">
+            <div data-bind="css: { active: dir() === 'down'}, event: { touchstart: setDirDown}">
                 <span data-bind="text:v1">0,00</span>
                 <small>SEK</small> 
             </div>
@@ -31,26 +31,24 @@
         <div id="keypad">
             <table width="100%" border="1px">
                 <tr>
-                    <td width="25%" data-bind="keypad">7</td>
-                    <td width="25%" data-bind="keypad">8</td>
-                    <td width="25%" data-bind="keypad">9</td>
-                    <td width="25%" data-bind="keypad" style="background:green">C</td>  
+                    <td width="33%" data-bind="keypad">7</td>
+                    <td width="33%" data-bind="keypad">8</td>
+                    <td width="33%" data-bind="keypad">9</td>  
                 </tr>
                  <tr>
-                    <td width="25%" data-bind="keypad">4</td>
-                    <td width="25%" data-bind="keypad">5</td>
-                    <td width="25%" data-bind="keypad">6</td>
-                    <td width="25%" data-bind="keypad" rowspan="3" style="background:green">=</td>  
+                    <td width="33%" data-bind="keypad">4</td>
+                    <td width="33%" data-bind="keypad">5</td>
+                    <td width="33%" data-bind="keypad">6</td>
                 </tr>
                  <tr>
-                    <td width="25%" data-bind="keypad">1</td>
-                    <td width="25%" data-bind="keypad">2</td>
-                    <td width="25%" data-bind="keypad">3</td>
+                    <td width="33%" data-bind="keypad">1</td>
+                    <td width="33%" data-bind="keypad">2</td>
+                    <td width="33%" data-bind="keypad">3</td>
                 </tr>
                  <tr>
-                    <td width="25%" data-bind="keypad"><span>i</span></td>
-                    <td width="25%" data-bind="keypad">0</td>
-                    <td width="25%" data-bind="keypad">,</td>
+                    <td width="33%" data-bind="keypad" class="inputbutton">C</td>
+                    <td width="33%" data-bind="keypad">0</td>
+                    <td width="33%" data-bind="keypad">,</td>
                 </tr>
             </table>
         </div> 
