@@ -24,6 +24,7 @@ app.use(express.cookieParser());
 // prevent cache
 app.use(function(req, res, next){
 	res.setHeader('Last-Modified', (new Date()).toUTCString());
+	req.connection.setTimeout(500);
 	next();
 });
 
