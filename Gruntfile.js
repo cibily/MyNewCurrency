@@ -35,14 +35,14 @@ module.exports = function (grunt) {
         'workspace': {
             options: {
 //                minifyTemplates: false,
-                release: {
+//                release: {
 //                    uglify: {
 //                        beautify: true,
 //                        compress: false,
 //                        mangle: false
 //                    },
-                    minifyHtml: false
-                },
+//                    minifyHtml: false
+//                },
 //                karma: {
 //                    test: {
 //                        browsers: [
