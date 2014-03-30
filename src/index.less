@@ -10,19 +10,26 @@
  */
 
 
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:300);
-@import "assets/less/reset.less";
 
+@import "assets/less/reset.less";
+            
+
+@font-face {
+font-family: 'JosefinSans-Light';
+src: url(assets://fonts/JosefinSans-Light.ttf);
+}
+
+html {
+    background: #000;
+    height: 100%;
+}
 
 body {
     width: 100%;
     background: #000;
     color: #fff;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'JosefinSans-Light', sans-serif;
 }
-
-
-
 
 
 
@@ -37,9 +44,10 @@ body {
     padding: 20px;
 }
 
-#inputbox .active {
-    border-bottom: 2px dashed #c2c2c2;
+#inputbox div:first-child  {
+    border-bottom: 1px dashed #c2c2c2;
 }
+
 
 #inputbox .active:before {
     content: ' ';
@@ -138,7 +146,6 @@ body {
 #keypad td.active {
     background: #c6c6c6;
     color: #fff;
-    text-shadow: 0 1px #333;
 }
     
 #keypad .inputbutton {
