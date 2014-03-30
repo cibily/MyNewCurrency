@@ -35,14 +35,17 @@ module.exports = function (grunt) {
         'workspace': {
             options: {
 //                minifyTemplates: false,
-//                release: {
+                release: {
 //                    uglify: {
 //                        beautify: true,
 //                        compress: false,
 //                        mangle: false
 //                    },
 //                    minifyHtml: false
-//                },
+                    manifest: {
+                        exclude: ['/assets/**']
+                    }
+                },
 //                karma: {
 //                    test: {
 //                        browsers: [
@@ -96,7 +99,7 @@ module.exports = function (grunt) {
         'copy:wkd-sourcemap-js',
         'copy:wkd-sourcemap-less',
         'copy:wkd-less-css',
-//        'clean:wks-tmp'
+        'clean:wks-tmp'
     ]);
     
     grunt.registerTask('release', [
@@ -121,7 +124,10 @@ module.exports = function (grunt) {
         'wkr-clear-assets',
         'clean:wkr-after',
         'clean:wks-tmp',
-        'cleanempty:wkr'
+        'cleanempty:wkr',
+        'wkr-cache-manifest',
+        'wkr-inline-assets',
+        'wkr-minify-html'
     ]);
         
     grunt.registerTask('develop', [

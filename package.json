@@ -1,6 +1,6 @@
 {
   "name": "politejs-workspace",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "Single Page Application Workspace",
   "main": "Gruntfile.js",
   "devDependencies": {
@@ -9,6 +9,7 @@
     "async": "~0.2.10",
     "shelljs": "~0.2.6",
     "html-minifier": "~0.5.6",
+    "datauri": "~0.5.5",
     "mocha": "~1.18.2",
     "chai": "~1.9.1",
     "sinon": "~1.9.0",
