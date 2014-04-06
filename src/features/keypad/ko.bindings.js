@@ -13,14 +13,18 @@ ko.bindingHandlers.keypad = {
         // get the binding's value from element's text content
         var keyValue = $(element).text().toUpperCase();
         
+        var isTouch = 'ontouchstart' in document.documentElement;
+        var evt1 = isTouch ? 'touchstart' : 'mousedown';
+        var evt2 = isTouch ? 'touchend' : 'mouseup';
+        
         // pass keypad value to the viewModel's 
-		element.addEventListener('touchend', function() {
+		element.addEventListener(evt2, function() {
             viewModel.key(keyValue);
 		});
         
         // bind events for a visual feedback of the click action
-        element.addEventListener('touchstart', clickFeedbackAction);
-        element.addEventListener('touchend', clickFeedbackAction);
+        element.addEventListener(evt1, clickFeedbackAction);
+        element.addEventListener(evt2, clickFeedbackAction);
         
         return false;
 	}

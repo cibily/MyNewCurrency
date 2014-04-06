@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<title>MyNewCurrency-FlexBox</title>
+		<title>MyNewCurrency</title>
 		
 		<!-- Mobile -->
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,13 +16,13 @@
     
     <body>
         <div id="currency">
-            <div class="inputbox" data-bind="css: { active: dir() === 'down'}, event: { touchstart: setDirDown}">
+            <div class="inputbox" data-bind="css: { active: dir() === 'down'}, event: { touchstart: setDirDown, mousedown: setDirDown}">
                 <span data-bind="text:v1">0,00</span>
-                <small>EUR</small> 
+                <small>SEK</small> 
             </div>
-            <div class="inputbox" data-bind="css: { active: dir() === 'up'}, event: { touchstart: setDirUp}">
+            <div class="inputbox" data-bind="css: { active: dir() === 'up'}, event: { touchstart: setDirUp, mousedown: setDirUp}">
                 <span data-bind="text:v2">0,00</span>
-                <small>SEK</small>
+                <small>EUR</small>
             </div>
         </div>
         <div id="keypad">
