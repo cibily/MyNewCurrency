@@ -42,6 +42,7 @@ module.exports = function (grunt) {
 //                        mangle: false
 //                    },
                     minifyHtml: false,
+//                    inline: false,
 //                    manifest: {
 //                        exclude: ['/assets/**']
 //                    }
