@@ -12,6 +12,6 @@ exports.start = function() {
     messageBus.on('keypad:change', viewModel.inp);
     
     // stats UI bindings
-    ko.applyBindings(viewModel, document.getElementById('inputbox'));  
+    ko.applyBindings(viewModel, document.getElementById('currency'));  
     
 };

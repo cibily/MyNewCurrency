@@ -41,10 +41,10 @@ module.exports = function (grunt) {
 //                        compress: false,
 //                        mangle: false
 //                    },
-//                    minifyHtml: false
-                    manifest: {
-                        exclude: ['/assets/**']
-                    }
+                    minifyHtml: false,
+//                    manifest: {
+//                        exclude: ['/assets/**']
+//                    }
                 },
 //                karma: {
 //                    test: {

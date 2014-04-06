@@ -20,7 +20,9 @@ ko.bindingHandlers.keypad = {
         
         // bind events for a visual feedback of the click action
         element.addEventListener('touchstart', clickFeedbackAction);
-        element.addEventListener('touchend', clickFeedbackAction);   
+        element.addEventListener('touchend', clickFeedbackAction);
+        
+        return false;
 	}
 };
 

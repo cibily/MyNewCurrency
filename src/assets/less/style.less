@@ -1,0 +1,167 @@
+/**
+ * MyNewCurrency - Web App - Flex-box
+ * ===========================================
+ *
+ * Autor: Silvia Trevellin
+ * Junior Front End Developer
+ *
+ * WorkSpace Progect: Marco Pegoraro
+ *
+ * Malmo, 5 april 2014
+ *
+ *
+ */
+
+@import url('reset.less');
+
+@mainBackgroundColor: #000;
+@cellBg: lighten(@mainBackgroundColor, 85%);
+
+
+
+/**
+ * FONT-FACE
+ * ================
+ */
+
+@font-face {
+    font-family: 'JosefinSans-Light';
+    src: url(../fonts/JosefinSans-Light.ttf);
+}
+
+
+/**
+ * GENERAL
+ * ================
+ */
+
+
+.displayFlexbox() {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flexSize1() {
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -webkit-flex: 1;          /* Chrome */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flexDirection(@direction) {
+    flex-direction: @direction;
+    -webkit-flex-direction: @direction;
+}
+
+body {
+    .displayFlexbox;
+    
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    
+    font-family: 'JosefinSans-Light', sans-serif;
+    background: @mainBackgroundColor;
+    padding: 10px;
+    
+    
+    // Prevent page scroll on browser
+    overflow: hidden;
+    
+}
+
+
+
+/**
+ * INPUTBOX
+ * ===============
+ */
+
+
+.inputbox {
+    color: #fff;
+    font-size: 1.4em;
+    text-align: right;
+    padding: 20px;
+}
+
+.inputbox:first-child  {
+    border-bottom: 1px dashed #c2c2c2;
+}
+
+.inputbox.active {
+    background-image: url(../img/greenarrow.png);
+    background-position: 15px;
+    background-repeat: no-repeat;
+}
+
+
+/**
+ * KEYPAD
+ * ================
+ */
+
+#keypad {
+    .flexSize1;
+    
+    .displayFlexbox;
+    
+    .flexDirection(column);
+}
+
+
+.keypad-row {
+    .flexSize1;
+    
+    .displayFlexbox;
+    
+    .flexDirection(row);
+    
+    border-bottom: 1px solid @mainBackgroundColor;
+    
+}
+
+.keypad-row:last-child { 
+    border-bottom: none; 
+}
+
+
+.keypad-cell {
+    .flexSize1;
+    
+    .displayFlexbox;
+    
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    
+    justify-content: center;
+    -webkit-justify-content: center;
+    
+    align-items: center;
+    -webkit-align-items: center;
+    
+    border-right: 1px solid @mainBackgroundColor;
+    font-size: 1.4em;
+    
+    background: @cellBg;
+    color: darken(@cellBg, 100%);
+}
+
+
+.keypad-cell:last-child { 
+    border-right: none; 
+}
+
+
+#keypad .input-cell {
+    background: #1b7a2a;
+    color: #fff;    
+}
+
+
+#keypad .active {
+    background: darken(@cellBg, 10%);
+    color: #fff;
+}
+
+
+  

@@ -1,58 +1,52 @@
-<!DOCTYPE html> 
+<!DOCTYPE>
 <html>
-	
 	<head>
-		<title>MyNewCurrency</title>
+		<title>MyNewCurrency-FlexBox</title>
 		
 		<!-- Mobile -->
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <!-- // Mobile -->
-
-
+        
         <!--[CSS]-->
-        <!--[/CSS]-->
+		<!--[/CSS]-->
 		
 	</head>
     
     <body>
-        
-        <div id="inputbox">
-            <div data-bind="css: { active: dir() === 'down'}, event: { touchstart: setDirDown}">
+        <div id="currency">
+            <div class="inputbox" data-bind="css: { active: dir() === 'down'}, event: { touchstart: setDirDown}">
                 <span data-bind="text:v1">0,00</span>
-                <small>SEK</small> 
+                <small>EUR</small> 
             </div>
-            <div data-bind="css: { active: dir() === 'up'}, event: { touchstart: setDirUp}">
+            <div class="inputbox" data-bind="css: { active: dir() === 'up'}, event: { touchstart: setDirUp}">
                 <span data-bind="text:v2">0,00</span>
-                <small>EUR</small>
+                <small>SEK</small>
             </div>
         </div>
-        
         <div id="keypad">
-            <table width="100%" border="1px">
-                <tr>
-                    <td width="33%" data-bind="keypad">7</td>
-                    <td width="33%" data-bind="keypad">8</td>
-                    <td width="33%" data-bind="keypad">9</td>  
-                </tr>
-                 <tr>
-                    <td width="33%" data-bind="keypad">4</td>
-                    <td width="33%" data-bind="keypad">5</td>
-                    <td width="33%" data-bind="keypad">6</td>
-                </tr>
-                 <tr>
-                    <td width="33%" data-bind="keypad">1</td>
-                    <td width="33%" data-bind="keypad">2</td>
-                    <td width="33%" data-bind="keypad">3</td>
-                </tr>
-                 <tr>
-                    <td width="33%" data-bind="keypad" class="inputbutton">C</td>
-                    <td width="33%" data-bind="keypad">0</td>
-                    <td width="33%" data-bind="keypad">,</td>
-                </tr>
-            </table>
-        </div> 
-        
+            <div class="keypad-row">
+                <div class="keypad-cell" data-bind="keypad">9</div>
+                <div class="keypad-cell" data-bind="keypad">8</div>
+                <div class="keypad-cell" data-bind="keypad">7</div>
+            </div>
+            <div class="keypad-row">
+                <div class="keypad-cell" data-bind="keypad">6</div>
+                <div class="keypad-cell" data-bind="keypad">5</div>
+                <div class="keypad-cell" data-bind="keypad">4</div>
+            </div>
+            <div class="keypad-row">
+                <div class="keypad-cell" data-bind="keypad">3</div>
+                <div class="keypad-cell" data-bind="keypad">2</div>
+                <div class="keypad-cell" data-bind="keypad">1</div>
+            </div>
+            <div class="keypad-row">
+                <div class="keypad-cell input-cell" data-bind="keypad">C</div>
+                <div class="keypad-cell" data-bind="keypad">0</div>
+                <div class="keypad-cell" data-bind="keypad">,</div>
+            </div>
+        </div>
         
         <!--[LIB]-->
         <script src="./assets/js/jquery-2.1.0.js"></script>
@@ -60,8 +54,11 @@
         <!--[/LIB]-->
         
         <!--[JS]-->
+        <script src="./assets/js/app-ui.js"></script>
         <!--[/JS]-->
-       
+        
+        
+        
+        
     </body>
-
 </html>

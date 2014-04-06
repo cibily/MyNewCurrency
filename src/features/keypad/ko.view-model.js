@@ -17,7 +17,7 @@ module.exports.key.extend({ notify: 'always' });
  */
 var inputStr = '';
 module.exports.key.subscribe(function(val) {
-    console.log('vm keypress', val);
+//    console.log('vm keypress', val);
     switch (val) {
         case '=':
             notify('submit');
