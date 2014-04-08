@@ -70,7 +70,6 @@ body {
 }
 
 
-
 /**
  * INPUTBOX
  * ===============
@@ -79,7 +78,7 @@ body {
 
 .inputbox {
     color: #fff;
-    font-size: 1.4em;
+    font-size: 1.8em;
     text-align: right;
     padding: 20px;
 }
@@ -140,7 +139,7 @@ body {
     -webkit-align-items: center;
     
     border-right: 1px solid @mainBackgroundColor;
-    font-size: 1.4em;
+    font-size: 1.6em;
     
     background: @cellBg;
     color: darken(@cellBg, 100%);
@@ -163,5 +162,19 @@ body {
     color: #fff;
 }
 
+#warning-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    padding-top: 10%;
 
+    background: #000;
+    color: #1b7a2a;
+    line-height: 70px;
+    font-size: 2em;
+    text-align: center;
+}
   
