@@ -17,6 +17,44 @@
 @mainBackgroundColor: #000;
 @cellBg: lighten(@mainBackgroundColor, 85%);
 
+/**
+ * LANDSCAPE-MESSAGE
+ * =================
+ */
+
+#warning-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+
+    background: #000;
+    color: #1b7a2a;
+    line-height: 70px;
+    font-size: 2em;
+    text-align: center;
+}
+
+@media only screen and (orientation:landscape) {
+    #warning-message {
+        .displayFlexbox;
+        
+         align-items: center;
+        -webkit-align-items: center; 
+        
+        -webkit-justify-content: center;
+        justify-content: center;
+        
+    }
+}
+
+
+  
+
 
 
 /**
@@ -162,19 +200,3 @@ body {
     color: #fff;
 }
 
-#warning-message {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    padding-top: 10%;
-
-    background: #000;
-    color: #1b7a2a;
-    line-height: 70px;
-    font-size: 2em;
-    text-align: center;
-}
-  

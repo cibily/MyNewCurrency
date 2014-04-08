@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<title>MyNewCurrency-FlexBox</title>
+		<title>MyNewCurrency</title>
 		
 		<!-- Mobile -->
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -11,22 +11,10 @@
         
         <!--[CSS]-->
 		<!--[/CSS]-->
-		
-        <style type="text/css">
-        @media only screen and (orientation:portrait){
-        #warning-message { display:none; }
-        }
-        </style>
-	
-		
+
 	</head>
     
     <body>
-    
-        <div id="warning-message">
-            <p>Hi, You can use this application only in portrait orientation.</p>
-            <p>Please, turn it!</p>  
-        </div>
 
         <div id="currency">
             <div class="inputbox" data-bind="css: { active: dir() === 'down'}, event: { touchstart: setDirDown}">
@@ -38,6 +26,7 @@
                 <small>SEK</small>
             </div>
         </div>
+        
         <div id="keypad">
             <div class="keypad-row">
                 <div class="keypad-cell" data-bind="keypad">9</div>
@@ -61,8 +50,10 @@
             </div>
         </div>
         
-        
-        
+        <div id="warning-message">
+            Hi, You can use this application only in portrait orientation.<br>
+            Please, turn it! 
+        </div>
         
         <!--[LIB]-->
         <script src="./assets/js/jquery-2.1.0.js"></script>
