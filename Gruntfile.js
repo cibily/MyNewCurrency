@@ -13,7 +13,7 @@
 module.exports = function (grunt) {
     
     // Initialize PoliteJS Workspace
-    var Workspace = require('./lib/workspace');
+    var Workspace = require('grunt-workspace');
     Workspace.init(grunt);
 
     
@@ -26,41 +26,16 @@ module.exports = function (grunt) {
 // --------------------------------------- //
     
 	grunt.initConfig({
-
 		pkg: grunt.file.readJSON('package.json'),
-        
-        /**
-         * Workspace Configuration
-         */
-        'workspace': {
+        'workspace' : {
             options: {
-//                minifyTemplates: false,
                 release: {
-//                    uglify: {
-//                        beautify: true,
-//                        compress: false,
-//                        mangle: false
-//                    },
                     minifyHtml: false,
-//                    inline: false,
-//                    manifest: {
-//                        exclude: ['/assets/**']
-//                    }
-                },
-//                karma: {
-//                    test: {
-//                        browsers: [
-//                            'PhantomJS',
-//                            'Chrome', 
-//                            'ChromeCanary', 
-//                            'Firefox', 
-//                            'Opera'
-//                        ]
-//                    }
-//                }
+                    inline: true,
+                    manifest: true
+                }
             }
-        } 
-		
+        }
 	});
     
     
@@ -81,6 +56,12 @@ module.exports = function (grunt) {
      * building process to your needs.
      *
      */
+    
+    grunt.registerTask('install', [
+        'workspace',
+    	'wks-npm-install-config',
+		'wks-npm-install-run',
+    ]);
     
     grunt.registerTask('build', [
         'workspace',
@@ -136,29 +117,16 @@ module.exports = function (grunt) {
         'watch:wkd'
     ]);
     
-    grunt.registerTask('test', [
-        'build',
-        'wks-karma',
-        'karma:wks-test'
-    ]);
-    
-    grunt.registerTask('start-ci', [
+    // start debug server in development mode
+    grunt.registerTask('server', [
         'workspace',
-        'wks-karma',
-        'karma:wks-ci:start'
+        'wks-debug-server:wkd'
     ]);
     
-    grunt.registerTask('ci', [
-    	'build',
-        'wks-karma',
-        'karma:wks-ci:run',
-		'watch:wks-ci'
-    ]);
-    
-    grunt.registerTask('install', [
+    // start debug server in release mode
+    grunt.registerTask('server-release', [
         'workspace',
-    	'wks-npm-install-config',
-		'wks-npm-install-run',
+        'wks-debug-server:wkr'
     ]);
     
     grunt.registerTask('default', ['install','release']);
@@ -178,7 +146,44 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-browserify');
-    grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-cleanempty');
+    
+
+    
+    
+// ----------------------------------------------------- //
+// ---[[   G R U N T   K A R M A   S U P P O R T   ]]--- //
+// ----------------------------------------------------- //
+    
+    if (grunt.file.exists('./node_modules/grunt-karma')) {
+        
+        grunt.loadNpmTasks('grunt-karma');
+        
+        grunt.registerTask('test', [
+            'build',
+            'wks-karma',
+            'karma:wks-test'
+        ]);
+
+        grunt.registerTask('start-ci', [
+            'workspace',
+            'wks-karma',
+            'karma:wks-ci:start'
+        ]);
+
+        grunt.registerTask('run-ci', [
+            'workspace',
+            'wks-karma',
+            'karma:wks-ci:run'
+        ]);
+
+        grunt.registerTask('ci', [
+            'build',
+            'wks-karma',
+            'karma:wks-ci:run',
+            'watch:wks-ci'
+        ]);
+        
+    }
     
 };
