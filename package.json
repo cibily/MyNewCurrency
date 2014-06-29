@@ -1,6 +1,6 @@
 {
   "name": "MyNewCurrency",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "eur2sek currency converter for iPhone",
   "main": "Gruntfile.js",
   "keywords": [
@@ -15,7 +15,7 @@
   ],
   "author": {
     "name": "Silvia Trevellin",
-    "url": "http://cibily.com/2014/03/mynewcurrency/"
+    "url": "http://mynewcurrency.cibily.com/"
   },
   "repository": {
     "type": "git",
